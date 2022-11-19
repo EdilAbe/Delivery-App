@@ -2,7 +2,6 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import connectDB from './connectDB.js'
-//import userRoutes from './routes/auth.js'
 import errorHandler from './middleware/errorHandler.js'
 import authMiddleware from './middleware/authMiddleware.js'
 import auth from "./routes/auth.js"

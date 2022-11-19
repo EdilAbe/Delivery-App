@@ -1,11 +1,15 @@
+import './App.css';
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import apiClient from "./services/apiClient.js";
+import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap"; 
 import Login from "./pages/Login.js";
 import Register from "./pages/Register.js";
-import './App.css';
 import ListingPage from "./pages/ListingPage.js";
 import LandingPage from "./pages/LandingPage.js";
+import NavbarComponent from './components/NavbarComponent.js';
+import Hero from "./components/Hero.js"
 
 function App() {
   const [user, setUser] = useState(null);
@@ -38,9 +42,12 @@ function App() {
 
 
   return (
+    <>
+    <NavbarComponent />
+    <Hero />
     <BrowserRouter>
     <Routes>
-       {/* <Route
+       <Route
             path="/"
             element={
               user ? (
@@ -49,7 +56,9 @@ function App() {
                 <LandingPage />
               )
             }
-          /> */}
+          />
+           
+          
       <Route
             path="/listing"
             element={<ListingPage user={user} setUser={setUser} />}
@@ -67,6 +76,7 @@ function App() {
 
     </Routes>
     </BrowserRouter>
+    </>
   );
 }
 

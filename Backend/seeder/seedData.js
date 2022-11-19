@@ -11,7 +11,7 @@ const menu = [
     {
         name : "Sausage Egg and Cheese",
         prices : 5.49 ,
-        category : Breakfast,
+        category : "Breakfast",
         image : "https://th.bing.com/th/id/OIP.7dfGvrybeF_jgEC27zb_CwHaEo?w=305&h=190&c=7&r=0&o=5&pid=1.7",
         description : "700-850 cal"
     },
