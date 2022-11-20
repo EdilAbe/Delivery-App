@@ -1,6 +1,7 @@
 import { useState, useEffect, React } from "react";
 import apiClient from "../services/apiClient.js"
 import { Link, useNavigate } from "react-router-dom";
+import {Form, Row, Col, Button} from 'react-bootstrap';
 
 
 export default function Register() {
@@ -86,7 +87,7 @@ export default function Register() {
       <div>
         <h2>Register</h2>
 
-        <form >
+        {/* <form >
           <div>
             <label >Email</label>
             <input
@@ -155,14 +156,75 @@ export default function Register() {
             />
             
           </div>
-        </form>
+        </form> */}
+        <Form>
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control   name="username" type="email" placeholder="Enter email"   value={form.email}
+              onChange={handleOnInputChange}/>
+        </Form.Group>
 
-        <button
-          className="submit-registration main-button"
-          onClick={handleOnFormSubmit}
-        >
-          Create Account
-        </button>
+        <Form.Group as={Col} controlId="formGridPassword">
+          <Form.Label>Username</Form.Label>
+          <Form.Control type="text"   name="username"
+              value={form.username}
+              onChange={handleOnInputChange} placeholder = "Username" />
+        </Form.Group>
+      </Row>
+
+      <Form.Group className="mb-3" controlId="formGridAddress1">
+        <Form.Label>First Name</Form.Label>
+        <Form.Control   name="firstName"
+                type="text"
+                value={form.firstName}
+                onChange={handleOnInputChange}
+                placeholder="First" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formGridAddress2">
+        <Form.Label>Last Name</Form.Label>
+        <Form.Control name="lastName"
+                type="text"
+                value={form.lastName}
+                onChange={handleOnInputChange}
+                placeholder="Last" />
+      </Form.Group>
+
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control   na  name="password"
+              type="password"
+              value={form.password}
+              onChange={handleOnInputChange}
+              placeholder="Enter your password"/>
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridConfirmPassword">
+          <Form.Label>Confirm Password</Form.Label>
+          <Form.Control    name="passwordConfirm"
+              type="password"
+              value={form.passwordConfirm}
+              onChange={handleOnInputChange}
+              placeholder="Confirm your password" />
+        </Form.Group>
+      </Row>
+
+    
+
+      <Form.Group className="mb-3" id="formGridCheckbox">
+        <Form.Check type="checkbox" label="Admin" />
+      </Form.Group>
+
+      <Button    onClick={handleOnFormSubmit} variant="primary" type="submit">
+      Create Account
+      </Button>
+    </Form>
+
+        
+
+        
         <div className="footer">
           <p>
             Already have an account? Log in{" "}
@@ -174,4 +236,6 @@ export default function Register() {
       </div>
     </div>
   );
-}
+} 
+
+

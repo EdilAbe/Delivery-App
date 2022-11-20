@@ -1,7 +1,7 @@
 import { useState, useEffect, React } from "react";
 import apiClient from "../services/apiClient.js"
 import { Link, useNavigate } from "react-router-dom";
-
+import {Form, Row, Col, Button} from 'react-bootstrap';
 
 export default function Login(){
     const navigate = useNavigate();
@@ -57,12 +57,13 @@ export default function Login(){
 
     return(
         <div>
+         
       <div >
         <h2>Login</h2>
 
         {/* verify if the user is logged in before accessing this page */}
 
-        <form>
+        {/* <form>
           <div>
             <label >Email</label>
             <input
@@ -89,7 +90,42 @@ export default function Login(){
           >
             Log in
           </button>
-        </form>
+        </form> */}
+         <Form>
+      <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
+        <Form.Label column sm={2}>
+          Email
+        </Form.Label>
+        <Col sm={10}>
+          <Form.Control   value={form.email}  name="email"
+              onChange={handleOnInputChange} type="email" placeholder="Email" />
+        </Col>
+      </Form.Group>
+
+      <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
+        <Form.Label column sm={2}>
+          Password
+        </Form.Label>
+        <Col sm={10}>
+          <Form.Control    name="password" 
+              value={form.password}
+              onChange={handleOnInputChange} type="password" placeholder="Password" />
+        </Col>
+      </Form.Group>
+      
+      {/* <Form.Group as={Row} className="mb-3" controlId="formHorizontalCheck">
+        <Col sm={{ span: 10, offset: 2 }}>
+          <Form.Check label="Admin" />
+          <Form.Check label="Remember me" />
+        </Col>
+      </Form.Group> */}
+
+      <Form.Group as={Row} className="mb-3">
+        <Col sm={{ span: 10, offset: 2 }}>
+          <Button  onClick={handleOnFormSubmit} type="submit">Sign in</Button>
+        </Col>
+      </Form.Group>
+    </Form>
 
         <div >
           <p>

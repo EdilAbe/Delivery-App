@@ -1,9 +1,16 @@
 import React from 'react'
+import Hero from "../components/Hero.js"
+import NavbarComponent from '../components/NavbarComponent.js';
+import Footer from "../components/Footer.js"
 
 const LandingPage = () => {
   return (
-    <div>LandingPage</div>
-  )
+<>
+<NavbarComponent />
+<Hero />
+<Footer />
+</>  
+)
 }
 
 export default LandingPage

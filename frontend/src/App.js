@@ -1,21 +1,19 @@
-import './App.css';
+import "./App.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import apiClient from "./services/apiClient.js";
-import 'bootstrap/dist/css/bootstrap.css';
-import "bootstrap"; 
-import Login from "./pages/Login.js";
-import Register from "./pages/Register.js";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap";
+import LoginPage from "./pages/LoginPage.js";
+//import Login from "./pages/Login.js";
+import RegisterPage from "./pages/RegisterPage.js";
 import ListingPage from "./pages/ListingPage.js";
 import LandingPage from "./pages/LandingPage.js";
-import NavbarComponent from './components/NavbarComponent.js';
-import Hero from "./components/Hero.js"
 
 function App() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -40,42 +38,37 @@ function App() {
     }
   }, []);
 
-
   return (
     <>
-    <NavbarComponent />
-    <Hero />
-    <BrowserRouter>
-    <Routes>
-       <Route
+      <BrowserRouter>
+        <Routes>
+          <Route
             path="/"
             element={
-              user ? (
+              !user ? (
                 <ListingPage user={user} setUser={setUser} />
               ) : (
                 <LandingPage />
               )
             }
           />
-           
-          
-      <Route
+
+          <Route
             path="/listing"
             element={<ListingPage user={user} setUser={setUser} />}
           />
-           
-           <Route
+
+          <Route
             path="/login"
-            element={<Login user={user} setUser={setUser} />}
+            element={<LoginPage user={user} setUser={setUser} />}
           />
           <Route
             path="/register"
-            element={<Register user={user} setUser={setUser} />}
+            element={<RegisterPage user={user} setUser={setUser} />}
           />
-                    {/* <Route path="/*" element={<NotFound />} /> */}
-
-    </Routes>
-    </BrowserRouter>
+          {/* <Route path="/*" element={<NotFound />} /> */}
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
