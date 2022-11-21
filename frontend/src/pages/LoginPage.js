@@ -1,8 +1,13 @@
 import { Row, Col, Container } from "react-bootstrap";
 import Login from "../components/Login.js";
+import NavbarComponent from '../components/NavbarComponent.js';
+import Footer from "../components/Footer.js"
+
 
 function LoginPage() {
   return (
+    <>
+    <NavbarComponent />
     <Container class="container-fluid">
       <Row className="justify-content-center">
         <Col sm={6}>
@@ -22,6 +27,8 @@ function LoginPage() {
         </Col>
       </Row>
     </Container>
+    <Footer />
+    </>
   );
 }
 

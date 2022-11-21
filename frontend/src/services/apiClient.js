@@ -54,11 +54,11 @@ class ApiClient {
   // GET Requests
 
   async fetchUserFromToken() {
-    return await this.request({ endpoint: `auth/me`, method: `GET` });
+    return await this.request({ endpoint: `auth/`, method: `GET` });
   }
 
   async fetchUserFromId(userId) {
-    return await this.request({ endpoint: `auth/` + userId, method: `GET` });
+    return await this.request({ endpoint: `auth/me` + userId, method: `GET` });
   }
 
   // POST requests
@@ -84,7 +84,7 @@ class ApiClient {
   async updateUser(userUpdate, userId) {
     return await this.request({
       endpoint: `auth/` + userId,
-      method: `PUT`,
+      method: `PATCH`,
       data: userUpdate,
     });
   }

@@ -7,7 +7,7 @@ function Hero() {
         <img
           className="d-block w-100"
           src="https://th.bing.com/th/id/OIP.6YMs2kED_VCbWCKSF9FftwHaE8?w=270&h=180&c=7&r=0&o=5&pid=1.7"
-          alt="First slide"
+          alt="First slide" style={{width : "100wv", height: "350px"}}
         />
         <Carousel.Caption>
           <h3>First slide label</h3>
@@ -18,7 +18,7 @@ function Hero() {
         <img
           className="d-block w-100"
           src="https://th.bing.com/th/id/OIP.R1HOXDxQR9Dsj6VczQCEpQHaE8?w=262&h=180&c=7&r=0&o=5&pid=1.7"
-          alt="Second slide"
+          alt="Second slide"  style={{width : "100vw", height: "350px"}}
         />
         <Carousel.Caption>
           <h3>Second slide label</h3>
@@ -29,7 +29,7 @@ function Hero() {
         <img
           className="d-block w-100"
           src="https://th.bing.com/th/id/OIP.RBk0NL1A9LkonentpoQlSQHaE8?w=284&h=189&c=7&r=0&o=5&pid=1.7"
-          alt="Third slide"
+          alt="Third slide"  style={{width : "100wv", height: "350px"}}
         />
         <Carousel.Caption>
           <h3>Third slide label</h3>

@@ -1,7 +1,9 @@
 import jwt from "jsonwebtoken";
 import asyncHandler from "express-async-handler";
 import User from "../models/User.js";
+import dotenv from 'dotenv'
 
+dotenv.config();
 const requireAuth = asyncHandler(async (req, res, next) => {
   let token;
   if (
@@ -10,7 +12,7 @@ const requireAuth = asyncHandler(async (req, res, next) => {
   ) {
     try {
       token = req.headers.authorization.split(" ")[1];
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      const decoded = jwt.verify(token, process.env.SECRET_KEY);
       req.user = await User.findById(decoded.id);
       next();
     } catch (err) {

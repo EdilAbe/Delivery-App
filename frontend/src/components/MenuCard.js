@@ -1,4 +1,4 @@
-import { Card , ListGroup} from 'react-bootstrap';
+import { Card , Button, ListGroup} from 'react-bootstrap';
 
 function MenuCard() {
   return (
@@ -13,8 +13,8 @@ function MenuCard() {
       </Card.Body>
       
       <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
+        <Card.Link style={{border:"0",color : "black" ,textDecoration: "none", margin: "10px" }}>Price</Card.Link>
+        <Button href="#" style={{border:"0",  backgroundColor: '#DC0D28', color: "white", margin: "10px" }} >Add to Cart</Button>
       </Card.Body>
     </Card>
   );

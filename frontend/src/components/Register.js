@@ -217,7 +217,7 @@ export default function Register() {
         <Form.Check type="checkbox" label="Admin" />
       </Form.Group>
 
-      <Button    onClick={handleOnFormSubmit} variant="primary" type="submit">
+      <Button   style={{border:"0",  backgroundColor: '#DC0D28', color: "white", margin: "10px" }}  onClick={handleOnFormSubmit} variant="primary" type="submit">
       Create Account
       </Button>
     </Form>
@@ -228,7 +228,7 @@ export default function Register() {
         <div className="footer">
           <p>
             Already have an account? Log in{" "}
-            <Link to="/login" >
+            <Link to="/login" style={{color : '#DC0D28' ,textDecoration: "none"}}>
               here
             </Link>
           </p>

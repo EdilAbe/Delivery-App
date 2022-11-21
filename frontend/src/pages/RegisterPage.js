@@ -1,8 +1,15 @@
 import { Row, Col, Container } from "react-bootstrap";
 import Register from "../components/Register.js";
+import NavbarComponent from '../components/NavbarComponent.js';
+import Footer from "../components/Footer.js"
+
+
 
 function RegisterPage() {
   return (
+
+    <>
+    <NavbarComponent />
     <Container class="container-fluid">
       <Row className="justify-content-center">
         <Col sm={5}>
@@ -22,6 +29,8 @@ function RegisterPage() {
         </Col>
       </Row>
     </Container>
+    <Footer />
+    </>
   );
 }
 

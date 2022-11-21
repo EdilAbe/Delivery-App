@@ -8,11 +8,15 @@ export default function Login(){
     const [form, setForm] = useState({ email: "", password: "" });
     const [errors, setErrors] = useState()
     const [user, setUser] = useState()
+
+
     useEffect(() => {
         if (user?.email) {
           navigate("/listing");
         }
       }, [user, navigate]);
+
+      
     
       const handleOnInputChange = (evt) => {
         // check if email is valid
@@ -122,7 +126,7 @@ export default function Login(){
 
       <Form.Group as={Row} className="mb-3">
         <Col sm={{ span: 10, offset: 2 }}>
-          <Button  onClick={handleOnFormSubmit} type="submit">Sign in</Button>
+          <Button  onClick={handleOnFormSubmit} type="submit"  style={{border:"0",  backgroundColor: '#DC0D28', color: "white", margin: "10px" }}>Sign in</Button>
         </Col>
       </Form.Group>
     </Form>
@@ -130,7 +134,7 @@ export default function Login(){
         <div >
           <p>
             Don't have an account? Sign up{" "}
-            <Link to="/register" >
+            <Link to="/register"   style={{color : '#DC0D28' ,textDecoration: "none"}}>
               here
             </Link>
           </p>

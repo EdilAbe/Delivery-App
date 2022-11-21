@@ -3,7 +3,9 @@ import Hero from "../components/Hero.js"
 import NavbarComponent from '../components/NavbarComponent.js';
 import Footer from "../components/Footer.js"
 
-const LandingPage = () => {
+const LandingPage = (props) => {
+
+console.log("landing", props)
   return (
 <>
 <NavbarComponent />
